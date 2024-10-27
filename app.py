@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as pl
+import plotly.express as px
 
 df = pd.read_csv('vehicles_us.csv')
 
@@ -42,13 +42,13 @@ avg_year = avg_year[(avg_year['model_year'] <= 2020) & (avg_year['model_year'] >
 avg_condition = df.groupby('condition')['price'].mean().reset_index()
 avg_condition = avg_condition.sort_values(by='price', ascending=True)
 # Create bar charts
-fig1 = pl.bar(avg_type, x='type', y='price', title='Average Price by Vehicle Type',  color_discrete_sequence=['#33ccff'], labels={'type': 'Vehicle Type', 'price': 'Average Price'})
+fig1 = px.bar(avg_type, x='type', y='price', title='Average Price by Vehicle Type',  color_discrete_sequence=['#33ccff'], labels={'type': 'Vehicle Type', 'price': 'Average Price'})
 fig1.update_traces(marker_line_color='black', marker_line_width=1.5)
 
-fig2 = pl.bar(avg_year, x='model_year', y='price', title='Average Price by Model Year',  color_discrete_sequence=['#8585e0'], labels={'model_year': 'Model Year', 'price': 'Average Price'})
+fig2 = px.bar(avg_year, x='model_year', y='price', title='Average Price by Model Year',  color_discrete_sequence=['#8585e0'], labels={'model_year': 'Model Year', 'price': 'Average Price'})
 fig2.update_traces(marker_line_color='black', marker_line_width=1.5)
 
-fig3 = pl.bar(avg_condition, x='condition', y='price', title='Average Price by Condition',  color_discrete_sequence=['#b300b3'], labels={'model_year': 'Model Year', 'price': 'Average Price'})
+fig3 = px.bar(avg_condition, x='condition', y='price', title='Average Price by Condition',  color_discrete_sequence=['#b300b3'], labels={'model_year': 'Model Year', 'price': 'Average Price'})
 fig3.update_traces(marker_line_color='black', marker_line_width=1.5)
 
 
@@ -77,19 +77,19 @@ avg_days_listed_condition = df.groupby('condition')['days_listed'].mean().reset_
 
 # create scatter plots
 # create scatter plots
-fig4 = pl.scatter(avg_days_listed_type, x='type', y='days_listed', title='Average Days Listed by Vehicle Type', labels={'days_listed': 'Days Listed', 'type': 'Vehicle Type'})
+fig4 = px.scatter(avg_days_listed_type, x='type', y='days_listed', title='Average Days Listed by Vehicle Type', labels={'days_listed': 'Days Listed', 'type': 'Vehicle Type'})
 fig4.update_traces(marker=dict(size=30, color='#33ccff'))
 fig4.update_traces(marker_line_color='black', marker_line_width=2.5)
 
-fig5 = pl.scatter(avg_days_listed_year, x='model_year', y='days_listed', title='Average Days Listed by Model Year', labels={'days_listed': 'Days Listed', 'model_year': 'Model Year'})
+fig5 = px.scatter(avg_days_listed_year, x='model_year', y='days_listed', title='Average Days Listed by Model Year', labels={'days_listed': 'Days Listed', 'model_year': 'Model Year'})
 fig5.update_traces(marker=dict(size=30, color='#8585e0'))
 fig5.update_traces(marker_line_color='black', marker_line_width=2.5)
 
-fig6 = pl.scatter(avg_days_listed_color, x='paint_color', y='days_listed', title='Average Days Listed by Paint Color', labels={'days_listed': 'Days Listed', 'paint_color': 'Paint Color'})
+fig6 = px.scatter(avg_days_listed_color, x='paint_color', y='days_listed', title='Average Days Listed by Paint Color', labels={'days_listed': 'Days Listed', 'paint_color': 'Paint Color'})
 fig6.update_traces(marker=dict(size=30, color='#ff0066', line=dict(color='black', width=2.5)))
 
 # Create scatter plot for average days listed by condition
-fig7 = pl.scatter(avg_days_listed_condition, x='condition', y='days_listed', title='Average Days Listed by Condition', labels={'days_listed': 'Days Listed', 'condition': 'Vehicle Condition'})
+fig7 = px.scatter(avg_days_listed_condition, x='condition', y='days_listed', title='Average Days Listed by Condition', labels={'days_listed': 'Days Listed', 'condition': 'Vehicle Condition'})
 fig7.update_traces(marker=dict(size=30, color= '#b300b3', line=dict(color='black', width=2.5)))
 
 st.plotly_chart(fig7)
@@ -112,12 +112,12 @@ avg_days_listed_price_above_20000 = avg_days_listed_price[avg_days_listed_price[
 avg_days_listed_price_below_20000 = avg_days_listed_price[avg_days_listed_price['price'] < 20000]
 
 # create histograms
-fig8 = pl.histogram(avg_days_listed_price_above_20000, x='days_listed', nbins=30, title='Average Days Vehicles Listed Above 20,000 Dollars', labels={'days_listed': 'Average Days Listed'}, color_discrete_sequence=['#00ff99'])
+fig8 = px.histogram(avg_days_listed_price_above_20000, x='days_listed', nbins=30, title='Average Days Vehicles Listed Above 20,000 Dollars', labels={'days_listed': 'Average Days Listed'}, color_discrete_sequence=['#00ff99'])
 
 fig8.update_traces(marker_line_color='black', marker_line_width=1.5)
 fig8.update_yaxes(range=[0, 160])
 
-fig9 = pl.histogram(avg_days_listed_price_below_20000, x='days_listed', nbins=30, title='Average Days Vehicles Listed Below 20,000 Dollars', labels={'days_listed': 'Average Days Listed'}, color_discrete_sequence=['#00e64d'])
+fig9 = px.histogram(avg_days_listed_price_below_20000, x='days_listed', nbins=30, title='Average Days Vehicles Listed Below 20,000 Dollars', labels={'days_listed': 'Average Days Listed'}, color_discrete_sequence=['#00e64d'])
 
 fig9.update_traces(marker_line_color='black', marker_line_width=1.5)
 fig9.update_yaxes(range=[0, 160])   
