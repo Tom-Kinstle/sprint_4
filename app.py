@@ -22,7 +22,7 @@ df = df.drop_duplicates()
 df['type'] = df['type'].replace({'pickup': 'truck'})
 df['type'] = df['type'].replace({'offroad': 'SUV'})
 
-df_clean =df.astype(stf)
+df_clean =df.astype(str)
 
 st.write(df_clean.head())
 st.markdown('Above we see a sample of the data we obtained from the vehicles_us.csv file')
