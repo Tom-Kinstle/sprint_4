@@ -156,3 +156,8 @@ st.markdown('##### On average we see vehicles which cost more or less than 20,00
 
 st.markdown('### Looking at the above information we can start to understand the variables that drive sales.  Certain new vehicles like Trucks and Convertibles tend to sell themselves, where used vans, wagons, and buses take more time to sell.')
 st.markdown('### **The largest change in a trend we see is sales of cars below 20,000 dollars, before and after the 30 days mark.  We can infer that the prices of these vehicles might drop after 30 days which leads to the spike we see in sales.  If pricing of these vehicles is moderated sooner it could help sell these vehicle faster and at a higher price, which would save in costs to maintain them while maximizing profits.** ')
+
+
+url = "https://github.com/Tom-Kinstle/sprint_4/tree/main"
+st.write("GetHub [link](%s)" % url)
+#st.markdown("check out this [link](%s)" % url)
