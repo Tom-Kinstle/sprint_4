@@ -24,8 +24,8 @@ df['type'] = df['type'].replace({'offroad': 'SUV'})
 
 df_clean =df.astype(str)
 
-st.write(df_clean.head())
-st.markdown('Above we see a sample of the data we obtained from the vehicles_us.csv file')
+#st.write(df_clean.head())
+#st.markdown('Above we see a sample of the data we obtained from the vehicles_us.csv file')
 st.markdown("<h1 style='text-align: center;'>Vehicle Pricing</h1>", unsafe_allow_html=True)
 
 #average price by vehicle type
