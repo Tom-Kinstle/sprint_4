@@ -18,5 +18,5 @@ The application can view online at the following address as well.
 
 https://eda-car-advertisement.onrender.com
 
-Thank you! 🎉
+Thank you! 🙏 Tom
 
