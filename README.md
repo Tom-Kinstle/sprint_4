@@ -14,7 +14,7 @@ This project takes a large data file of 51,525 records containing sales informat
 
 •	Then run the app file  (streamlit run app.py).
 
-The application can view online at the following address as well. 
+The application can be viewed online at the following address as well. 
 
 https://eda-car-advertisement.onrender.com
 
