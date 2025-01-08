@@ -5,7 +5,7 @@ This project takes a large data file of 51,525 records containing sales informat
 
 •	Open CMD.exe prompt in Anaconda Navigator 
 
-•	Install streamlit (pip install streamlit).
+•	Install streamlit (pip install streamlit). 
 
 •	Change directories (CD file path location).  
 
